@@ -1313,7 +1313,7 @@ namespace ManagedDism
         public static void UnmountImage(string mountPath, bool commitChanges, ManagedDism.DismProgressCallback progressCallback, object userData)
         {
             // Determine flags
-            var flags = commitChanges ? DismApi.DISM_COMMIT_MASK : DismApi.DISM_DISCARD_IMAGE;
+            var flags = commitChanges ? DismApi.DISM_COMMIT_IMAGE : DismApi.DISM_DISCARD_IMAGE;
 
             // Create a DismProgress object to wrap the callback and allow cancellation
             var progress = new DismProgress(progressCallback, userData);
